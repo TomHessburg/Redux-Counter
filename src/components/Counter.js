@@ -21,6 +21,7 @@ class Counter extends Component {
     };
 
     render() {
+        console.log(this.props);
         return (
             <p>
                 Clicked: {this.props.count} times
