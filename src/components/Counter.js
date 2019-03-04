@@ -8,8 +8,7 @@ class Counter extends Component {
         // only increments if the counter value is odd
         e.preventDefault();
         if(this.props.count%2 === 1){
-            const newNum = this.props.count + 1
-            this.props.increment(newNum)
+            this.props.increment()
         }
     };
 
@@ -28,15 +27,13 @@ class Counter extends Component {
 
                 <button onClick={e => {
                     e.preventDefault();
-                    const newNum = this.props.count + 1
-                    this.props.increment(newNum)
+                    this.props.increment()
                 }}>
                     +
                 </button>
                 <button onClick={e => {
                     e.preventDefault();
-                    const newNum = this.props.count - 1
-                    this.props.decrement(newNum)
+                    this.props.decrement()
                 }}>
                     -
                 </button>
