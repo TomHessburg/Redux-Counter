@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { increment, decrement } from '../actions';
-
+ 
 class Counter extends Component {
     incrementIfOdd = () => {
         // Stretch Problem: Implement an increment function that
@@ -20,10 +20,18 @@ class Counter extends Component {
         return (
             <p>
                 Clicked: {this.props.count} times
-                <button onClick={() => {/* Fill me in */ }}>
+                <button onClick={e => {
+                    e.preventDefault();
+                    const newNum = this.props.count + 1
+                    this.props.increment(newNum)
+                }}>
                     +
                 </button>
-                <button onClick={() => {/* Fill me in */ }}>
+                <button onClick={e => {
+                    e.preventDefault();
+                    const newNum = this.props.count - 1
+                    this.props.decrement(newNum)
+                }}>
                     -
                 </button>
                  {/* Uncomment these button tags if you got
